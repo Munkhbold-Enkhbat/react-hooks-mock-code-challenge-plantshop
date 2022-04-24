@@ -6,12 +6,18 @@ import Search from "./Search";
 function PlantPage() {
 
   const [searchedPlant, setSearchedPlant] = useState('')
+  const [plants, setPlants] = useState([])
+
+  function handleAddPlant(newPlant) {
+    const updatedPlantList = [...plants, newPlant]
+    setPlants(updatedPlantList)
+  }
 
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm handleAddPlant={handleAddPlant}/>
       <Search setSearchedPlant={setSearchedPlant}/>
-      <PlantList searchedPlant={searchedPlant}/>
+      <PlantList plants={plants}  setPlants={setPlants} searchedPlant={searchedPlant}/>
     </main>
   );
 }

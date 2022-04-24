@@ -41,6 +41,18 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Money Tree",
+      "image": "https://res.cloudinary.com/easyplant/image/fetch/f_auto,q_auto,c_fill,w_700,h_812/https://cdn.shopify.com/s/files/1/0513/8032/2473/products/Money_tree_amber_ocean_light.jpg?v=1632469290",
+      "price": 55,
+      "id": 8
+    },
+    {
+      "name": "English Ivy",
+      "image": "https://m.media-amazon.com/images/I/61ByPv5ddCL._AC_SL1000_.jpg",
+      "price": 7.99,
+      "id": 9
     }
   ]
 }
