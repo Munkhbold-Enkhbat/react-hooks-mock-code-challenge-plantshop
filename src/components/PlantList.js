@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
-import { useState } from "react/cjs/react.production.min";
+import React, { useEffect, useState } from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList() {
+function PlantList({ searchedPlant }) {
 
   const [plants, setPlants] = useState([])
 
@@ -12,8 +11,12 @@ function PlantList() {
       .then(data => setPlants(data))
   }, [])
 
+  const filteredPlants = searchedPlant === "" ? 
+    [...plants] :
+    plants.filter(plant => plant.name.toLowerCase().includes(searchedPlant.toLowerCase()))
+
   function renderPlants() {
-    return plants.map(plant => {
+    return filteredPlants.map(plant => {
       return <PlantCard key={plant.id} plant={plant}/>
     })
   }
